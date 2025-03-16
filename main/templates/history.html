@@ -1,0 +1,33 @@
+<section class="page-section" id="about">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">{{history_title}}</h2>
+            <h3 class="section-subheading text-muted">{{history_description}}</h3>
+        </div>
+        <ul class="timeline">
+            {% for history in histories %}
+            <li {% if forloop.counter == 2 %} class="timeline-inverted" {% endif %}>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ history.image.url }}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>{{history.date}}</h4>
+                        <h4 class="subheading">{{history}}</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">{{history.description}}</p></div>
+                </div>
+            </li>
+            {% endfor %}
+            <li class="timeline-inverted">
+                <div class="timeline-image">
+                    <h4>
+                        Be Part
+                        <br />
+                        Of Our
+                        <br />
+                        Story!
+                    </h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
