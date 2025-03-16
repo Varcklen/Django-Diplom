@@ -27,4 +27,12 @@ def contacts(request):
     return {
         'contact_title': 'Contact Us',
         'contact_description': 'Lorem ipsum dolor sit amet consectetur.',
+        'contact_send_message': 'Send Message',
+        'contact_success': 'Form submission successful!',
+        'contact_fail': 'Error sending message!',
+        'contact_name_require': 'A name is required.',
+        'contact_email_require': 'An email is required.',
+        'contact_email_invalid': 'Email is not valid.',
+        'contact_phone_require': 'A phone number is required.',
+        'contact_message_require': 'A message is required.',
     }

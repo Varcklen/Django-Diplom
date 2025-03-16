@@ -22,8 +22,7 @@ class BaseAdminVision(admin.ModelAdmin):
 class ServiceAdmin(BaseAdminVision):
     list_display = ('id', 'name', 'image_link', 'description', 'is_visible', 'sort')
     list_editable = ('image_link', 'description', 'is_visible', 'sort')
-    
-    
+     
 @admin.register(Portfolio)
 class PortfolioAdmin(BaseAdminVision, ImageMixin):
     list_display = ('id', 'name', 'image_tag', 'client', 'category', 'small_desc', 'description', 'is_visible', 'sort')
