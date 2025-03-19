@@ -18,6 +18,11 @@
     {% include 'partner.html' %}
 
     <!-- Contact-->
-    {% include 'contact.html' %}
+    {% if user.is_authenticated %}
+        {% include 'contact.html' %}
+    {% endif %}
+
+    <!-- Portfolio Modals -->
+    {% include 'portfolio_modals.html' %}
 
 {% endblock %}

@@ -14,6 +14,7 @@ def history(request):
     return {
         'history_title': 'About',
         'history_description': 'Lorem ipsum dolor sit amet consectetur.',
+        'history_inspire': 'Be Part <br /> Of Our <br /> Story!',
     }
 
 def staff(request):
@@ -35,4 +36,9 @@ def contacts(request):
         'contact_email_invalid': 'Email is not valid.',
         'contact_phone_require': 'A phone number is required.',
         'contact_message_require': 'A message is required.',
+    }
+
+def portfolio_modals(request):
+    return {
+        'portfolio_modals_close_project': 'Close Project',
     }

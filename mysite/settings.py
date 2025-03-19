@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'main.apps.MainConfig',
+    'manager.apps.ManagerConfig',
+    'account.apps.AccountConfig'
 ]
 
 MIDDLEWARE = [
@@ -71,6 +74,7 @@ TEMPLATES = [
                 'main.context_processors.history',
                 'main.context_processors.staff',
                 'main.context_processors.contacts',
+                'main.context_processors.portfolio_modals'
             ],
         },
     },
@@ -127,6 +131,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+LOGIN_URL = 'account/login/'
+REGISTER_URL = 'account/register/'
+LOGOUT_URL = 'account/logout/'
+
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",

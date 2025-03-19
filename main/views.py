@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Service, Portfolio, History, Staff, Partner
 from .forms import UserMessageForm
 from django.contrib import messages
-from django.http import HttpResponse
+# from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -15,7 +15,6 @@ def index(request):
     user_message = UserMessageForm(request.POST or None)
 
     if request.method == 'POST':
-        return HttpResponse('works!')
         if user_message.is_valid():
             user_message.save()
             messages.success(request, 'Your message has been saved.')
@@ -33,4 +32,4 @@ def index(request):
         'user_message': user_message
     }
 
-    return render(request, 'index.html', context=context)
+    return render(request, 'main_index.html', context=context)

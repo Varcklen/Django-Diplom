@@ -19,11 +19,20 @@ from django.urls import path
 from django.conf.urls.static import static
 from mysite import settings
 
+#from django.contrib.auth import views as auth_views
+
 from main import views as main_view
+from manager import views as manager_view
+from account import views as account_view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main_view.index, name='home')
+    path('', main_view.index, name='home'),
+    path('manager/', manager_view.index, name='manager'),
+    path(settings.LOGIN_URL, account_view.UserLoginView.as_view(), name='login'),
+    path(settings.REGISTER_URL, account_view.UserRegistrationView.as_view(), name='register'),
+    path(settings.LOGOUT_URL, account_view.user_logout, name='logout'),
 ]
 
 if settings.DEBUG:

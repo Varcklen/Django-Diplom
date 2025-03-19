@@ -1,17 +1,27 @@
+{% load static %}
+{% load is_manager_tag %}
+
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="#page-top"><img src="static/assets/img/navbar-logo.svg" alt="..." /></a>
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/img/navbar-logo.svg' %}" alt="..." /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             {{navigation_menu}}
             <i class="fas fa-bars ms-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                
+                {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#contact">Message</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">logout</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+                
+                {% if user|is_manager_tag %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'manager' %}">Manager</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

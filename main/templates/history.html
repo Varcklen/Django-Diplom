@@ -1,3 +1,5 @@
+{% load is_even %}
+
 <section class="page-section" id="about">
     <div class="container">
         <div class="text-center">
@@ -6,7 +8,7 @@
         </div>
         <ul class="timeline">
             {% for history in histories %}
-            <li {% if forloop.counter == 2 %} class="timeline-inverted" {% endif %}>
+            <li {% if forloop.counter|is_even %} class="timeline-inverted" {% endif %}>
                 <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ history.image.url }}" alt="..." /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
@@ -20,11 +22,7 @@
             <li class="timeline-inverted">
                 <div class="timeline-image">
                     <h4>
-                        Be Part
-                        <br />
-                        Of Our
-                        <br />
-                        Story!
+                        {{history_inspire|safe}}
                     </h4>
                 </div>
             </li>
