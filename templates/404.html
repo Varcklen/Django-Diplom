@@ -8,8 +8,10 @@
         {% include 'includes\header.html' %}
 
         <!-- Content-->
-        {% block content %}
-        {% endblock %}
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">[404] Current page does not exist</h2>
+            <a href="{% url 'home' %}"><h3 class="section-subheading text-muted">Return</h3></a>
+        </div>
 
         <!-- Footer-->
         {% include 'includes\footer.html' %}

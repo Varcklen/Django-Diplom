@@ -1,36 +1,34 @@
 def services(request):
     return {
         'service_title': 'Services',
-        'service_description': 'Lorem ipsum dolor sit amet consectetur.',
+        'service_description': 'We provide a wide range of services',
     }
 
 def portfolio(request):
     return {
         'portfolio_title': 'Portfolio',
-        'portfolio_description': 'Lorem ipsum dolor sit amet consectetur.',
+        'portfolio_description': 'We have long-term experience in this area',
     }
 
 def history(request):
     return {
         'history_title': 'About',
-        'history_description': 'Lorem ipsum dolor sit amet consectetur.',
-        'history_inspire': 'Be Part <br /> Of Our <br /> Story!',
+        'history_description': 'Our history is quite extensive',
+        'history_inspire': 'Be Part <br/> Of Our <br/> Story!',
     }
 
 def staff(request):
     return {
         'staff_title': 'Our Amazing Team',
-        'staff_description': 'Lorem ipsum dolor sit amet consectetur.',
-        'staff_bottom_description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.',
+        'staff_description': 'Our professionals work tirelessly',
+        'staff_bottom_description': 'You can use the services of our employees or become part of our company',
     }
 
 def contacts(request):
     return {
         'contact_title': 'Contact Us',
-        'contact_description': 'Lorem ipsum dolor sit amet consectetur.',
+        'contact_description': 'Write to us about your problem and we will help you solve it',
         'contact_send_message': 'Send Message',
-        'contact_success': 'Form submission successful!',
-        'contact_fail': 'Error sending message!',
         'contact_name_require': 'A name is required.',
         'contact_email_require': 'An email is required.',
         'contact_email_invalid': 'Email is not valid.',

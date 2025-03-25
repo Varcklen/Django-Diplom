@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Service, Portfolio, History, Staff, Partner
 from .forms import UserMessageForm
 from django.contrib import messages
-# from django.http import HttpResponse
+from django.urls import reverse
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -17,11 +18,10 @@ def index(request):
     if request.method == 'POST':
         if user_message.is_valid():
             user_message.save()
-            messages.success(request, 'Your message has been saved.')
+            messages.success(request, 'Your message has been sent. Please wait for a response.')
         else:
             messages.error(request, 'Your message is not valid.')
-        
-        return redirect('home')
+        return redirect('{}#contact'.format(reverse('home')))
         
     context = {
         'services': services,

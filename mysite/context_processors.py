@@ -2,8 +2,8 @@ from main.models import Contact
 
 def header(request):
     return {
-        'header_welcome': 'Welcome To Our Studio!',
-        'header_greetings': "It's Nice To Meet You",
+        'header_welcome': 'Welcome To Our Company!',
+        'header_greetings': "Where we solve problems",
         'header_more': 'Tell Me More',
     }
 
@@ -12,7 +12,7 @@ def footer(request):
     
     return {
         'footer_contacts': contacts,
-        'footer_copyright': 'Copyright &copy; Your Website 2023',
+        'footer_copyright': 'Copyright &copy; Your Website 2025',
         'footer_privacy_policy': 'Privacy Policy',
         'footer_terms_of_use': 'Terms of Use',
     }
