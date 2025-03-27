@@ -11,7 +11,7 @@ def footer(request):
     contacts = Contact.objects.first()
     
     return {
-        'footer_contacts': contacts,
+        'footer_contacts': contacts or '',
         'footer_copyright': 'Copyright &copy; Your Website 2025',
         'footer_privacy_policy': 'Privacy Policy',
         'footer_terms_of_use': 'Terms of Use',
