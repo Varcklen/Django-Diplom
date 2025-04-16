@@ -47,7 +47,8 @@ INSTALLED_APPS = [
 
     'main.apps.MainConfig',
     'manager.apps.ManagerConfig',
-    'account.apps.AccountConfig'
+    'account.apps.AccountConfig',
+    'successful_send.apps.SuccessfulSendConfig',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +86,7 @@ TEMPLATES = [
                 'main.context_processors.history',
                 'main.context_processors.staff',
                 'main.context_processors.contacts',
-                'main.context_processors.portfolio_modals'
+                'main.context_processors.portfolio_modals',
             ],
         },
     },
