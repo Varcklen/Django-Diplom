@@ -18,10 +18,11 @@ def index(request):
     if request.method == 'POST':
         if user_message.is_valid():
             user_message.save()
-            messages.success(request, 'Your message has been sent. Please wait for a response.')
+            #messages.success(request, 'Your message has been sent. Please wait for a response.')
+            return redirect('successful_send')
         else:
             messages.error(request, 'Your message is not valid.')
-        return redirect('{}#contact'.format(reverse('home')))
+            return redirect('{}#contact'.format(reverse('home')))
         
     context = {
         'services': services,

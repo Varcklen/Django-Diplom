@@ -2,7 +2,42 @@
 
 {% block content %}
     <div class="row text-center">
-        <h2 class="section-heading text-uppercase">This is a Manager Page</h2>
-        <h2 class="section-heading text-uppercase">Only managers have access to it</h2>
+        <h4 class="section-heading">List of all sent messages</h4>
     </div>
+
+    <div class="container mt-5 px-2">
+        <div class="table-responsive">
+            <table class="table table-responsive table-borderless">
+                    
+                <thead>
+                    <tr class="bg-light">
+                    <th scope="col" width="5%">Button</th>
+                    <th scope="col" width="5%">Name</th>
+                    <th scope="col" width="5%">Email</th>
+                    <th scope="col" width="5%">Phone</th>
+                    <th scope="col" width="9%">Is Confirmed</th>
+                    <th scope="col" width="10%">Date Created</th>
+                    <th scope="col" width="10%">Date Updated</th>
+                    <th scope="col">Message</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for message in messages %}
+                        <tr>
+                            <td><a class="btn btn-primary text-uppercase" href="{% url 'manager_form' message.id %}">Update</a></td>
+                            <td>{{ message.name }}</td>
+                            <td>{{ message.email }}</td>
+                            <td>{{ message.phone }}</td>
+                            <th scope="row"><input class="form-check-input" type="checkbox" onclick="return false;" checked="{{ message.is_confirmed }}"></th>
+                            <td>{{ message.date_created }}</td>
+                            <td>{{ message.date_updated }}</td>
+                            <td>{{ message.message }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div> 
+    </div>
+    
 {% endblock %}
